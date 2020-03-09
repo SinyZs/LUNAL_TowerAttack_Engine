@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{2FCB8187-ECB1-36A9-4189-915987B78DE3}</ProjectGuid>
+    <ProjectGuid>{74A48224-9724-D888-D490-BC087E183205}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>NavMeshComponentsEditor</AssemblyName>
@@ -71,19 +71,19 @@
     <Compile Include="Assets\Plugins\NavMeshComponents\Editor\NavMeshSurfaceEditor.cs" />
     <None Include="Assets\Plugins\NavMeshComponents\Editor\NavMeshComponentsEditor.asmdef" />
     <Reference Include="UnityEditor.UI">
-      <HintPath>D:/Unity/Cours Pierre/LUNAL_TowerAttack_Engine/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>D:/Unity/Cours Pierre/LUNAL_Quentin_TowerAttack_Engine/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>D:/Unity/Cours Pierre/LUNAL_TowerAttack_Engine/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+      <HintPath>D:/Unity/Cours Pierre/LUNAL_Quentin_TowerAttack_Engine/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>D:/Unity/Cours Pierre/LUNAL_TowerAttack_Engine/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>D:/Unity/Cours Pierre/LUNAL_Quentin_TowerAttack_Engine/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.TestRunner">
-      <HintPath>D:/Unity/Cours Pierre/LUNAL_TowerAttack_Engine/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
+      <HintPath>D:/Unity/Cours Pierre/LUNAL_Quentin_TowerAttack_Engine/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TestRunner">
-      <HintPath>D:/Unity/Cours Pierre/LUNAL_TowerAttack_Engine/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
+      <HintPath>D:/Unity/Cours Pierre/LUNAL_Quentin_TowerAttack_Engine/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.19f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -275,22 +275,22 @@
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Advertisements">
-      <HintPath>D:/Unity/Cours Pierre/LUNAL_TowerAttack_Engine/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
+      <HintPath>D:/Unity/Cours Pierre/LUNAL_Quentin_TowerAttack_Engine/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>D:/Unity/Cours Pierre/LUNAL_TowerAttack_Engine/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>D:/Unity/Cours Pierre/LUNAL_Quentin_TowerAttack_Engine/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>D:/Unity/Cours Pierre/LUNAL_TowerAttack_Engine/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>D:/Unity/Cours Pierre/LUNAL_Quentin_TowerAttack_Engine/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>D:/Unity/Cours Pierre/LUNAL_TowerAttack_Engine/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>D:/Unity/Cours Pierre/LUNAL_Quentin_TowerAttack_Engine/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Purchasing">
-      <HintPath>D:/Unity/Cours Pierre/LUNAL_TowerAttack_Engine/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll</HintPath>
+      <HintPath>D:/Unity/Cours Pierre/LUNAL_Quentin_TowerAttack_Engine/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>D:/Unity/Cours Pierre/LUNAL_TowerAttack_Engine/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
+      <HintPath>D:/Unity/Cours Pierre/LUNAL_Quentin_TowerAttack_Engine/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.19f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -649,7 +649,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="NavMeshComponents.csproj">
-      <Project>{9320DA8E-902C-CECB-CE38-7466005AF192}</Project>
+      <Project>{6D086941-73E0-B4D5-A95E-F6741E463D8B}</Project>
       <Name>NavMeshComponents</Name>
     </ProjectReference>
   </ItemGroup>
