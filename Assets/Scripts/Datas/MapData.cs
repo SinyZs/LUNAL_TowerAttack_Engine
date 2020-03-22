@@ -43,23 +43,11 @@ public enum Alignment
     IA,
     Player
 }
-public enum BrushState
-{
-    One,
-    Line,
-    Square,
-    Cross,
-    L,
-    T,
-    Heart
-}
 
 [Serializable]
 public struct SquareData
 {
     public SquareState state;
-
-    public BrushState brush;
 
     public Alignment aligment;
 }

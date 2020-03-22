@@ -3,7 +3,18 @@ guid: 919a4480e5371cb4aa4510d9b9eabb10
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - prefabSurface: {fileID: 8973411127327444797, guid: 3ccfd2c93abbb83449ace856f58f284e,
+      type: 3}
+  - navContainer: {instanceID: 0}
+  - prefabWall: {fileID: 4123415813956192617, guid: 84beb086535eb5c4c8c3aaf269721d25,
+      type: 3}
+  - prefabWater: {fileID: 4872230516983268115, guid: 4787a65afee695445bda828c628a5008,
+      type: 3}
+  - prefabEdgeHori: {fileID: 4123415813956192617, guid: e648d908aefaae043a09956923ae45fd,
+      type: 3}
+  - prefabEdgeVert: {fileID: 4123415813956192617, guid: 66260e3f59fb1c246a243329b934e0e0,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
