@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1e0cd309e0e9c34183a5ddd8d677c46, type: 3}
+  m_Name: Frondeur
+  m_EditorClassIdentifier: 
+  debugColor: {r: 0.5262312, g: 0.16820934, b: 0.7924528, a: 1}
+  alignment: 2
+  startLife: 2
+  popAmount: 1
+  nbrEntityAtPop: 1
+  isAttackEntity: 1
+  typeTarget: 1
+  damageAttack: 2
+  rangeDetect: 3
+  isProjectileAttack: 1
+  prefabProjectile: {fileID: 2047398191264613396, guid: 874f6c1d26ea70e43927265c60816ae0,
+    type: 3}
+  timeWaitNextAttack: 0.2
+  isCreatorEntity: 0
+  toCreate: {fileID: 0}
+  nbrToCreate: 1
+  timeWaitNextCreate: 1
+  moveSpeed: 1.5
+  timeWaitBeforeMove: 1
+  rangeToDoAttack: 3

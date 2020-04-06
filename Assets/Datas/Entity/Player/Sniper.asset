@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1e0cd309e0e9c34183a5ddd8d677c46, type: 3}
+  m_Name: Sniper
+  m_EditorClassIdentifier: 
+  debugColor: {r: 0.6382199, g: 0.33161268, b: 0.8679245, a: 1}
+  alignment: 2
+  startLife: 1
+  popAmount: 2
+  nbrEntityAtPop: 1
+  isAttackEntity: 1
+  typeTarget: 1
+  damageAttack: 7
+  rangeDetect: 3
+  isProjectileAttack: 1
+  prefabProjectile: {fileID: 2047398191264613396, guid: 874f6c1d26ea70e43927265c60816ae0,
+    type: 3}
+  timeWaitNextAttack: 3.2
+  isCreatorEntity: 0
+  toCreate: {fileID: 8419466628137860276, guid: 99a084ba96617504699043798fb15e3c,
+    type: 3}
+  nbrToCreate: 3
+  timeWaitNextCreate: 4
+  moveSpeed: 3
+  timeWaitBeforeMove: 2
+  rangeToDoAttack: 3

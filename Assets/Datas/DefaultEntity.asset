@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfb749d369f1a2147b306d432aa66a42, type: 3}
+  m_Name: DefaultEntity
+  m_EditorClassIdentifier: 
+  alignment: 0
+  startLife: 1
+  popAmount: 1
+  nbrEntityAtPop: 1
+  isAttackEntity: 1
+  typeTarget: 0
+  damageAttack: 1
+  rangeDetect: 1
+  isProjectileAttack: 0
+  prefabProjectile: {fileID: 0}
+  timeWaitNextAttack: 1
+  isCreatorEntity: 0
+  toCreate: {fileID: 0}
+  nbrToCreate: 1
+  timeWaitNextCreate: 1

@@ -4,25 +4,31 @@ using UnityEngine;
 
 public class PoolManager : SingletonMono<PoolManager>
 {
-    [Range(1, 100)]
-    public int nbrPopulateAtStart = 10;
-
-    public List<GameObject> prefabsToPool;
+    public List<PoolProps> prefabsToPool;
 
     private Dictionary<GameObject, Pool> m_AllPools;
+    private Dictionary<EntityData, Pool> m_AllPoolsByEntityData;
 
     public void Awake()
     {
         m_AllPools = new Dictionary<GameObject, Pool>();
-        foreach(GameObject prefab in prefabsToPool)
+        m_AllPoolsByEntityData = new Dictionary<EntityData, Pool>();
+        foreach (PoolProps poolProps in prefabsToPool)
         {
-            if (!m_AllPools.ContainsKey(prefab))
+            if (!m_AllPools.ContainsKey(poolProps.prefab))
             {
-                m_AllPools.Add(prefab, new Pool(gameObject, prefab, nbrPopulateAtStart));
+                Pool pool = new Pool(gameObject, poolProps.prefab, poolProps.nbrPopulate);
+                m_AllPools.Add(poolProps.prefab, pool);
+
+                Entity entity = poolProps.prefab.GetComponent<Entity>();
+                if (entity != null)
+                {
+                    m_AllPoolsByEntityData.Add(entity.entityData, pool);
+                }
             }
             else
             {
-                Debug.LogWarning("Prefab Key already Exist !", prefab);
+                Debug.LogWarning("Prefab Key already Exist !", poolProps.prefab);
             }
         }
     }
@@ -34,6 +40,16 @@ public class PoolManager : SingletonMono<PoolManager>
             return m_AllPools[prefabKey].GetAvailable();
         }
         Debug.LogError("NO POOL FOR : " + prefabKey.name);
+        return null;
+    }
+
+    public GameObject GetElement(EntityData entityData)
+    {
+        if (m_AllPoolsByEntityData.ContainsKey(entityData))
+        {
+            return m_AllPoolsByEntityData[entityData].GetAvailable();
+        }
+        Debug.LogWarning("Try To Get element that is not pooled !");
         return null;
     }
 
@@ -58,6 +74,15 @@ public class PoolManager : SingletonMono<PoolManager>
             Destroy(toPool);
         }
     }
+}
+
+[System.Serializable]
+public struct PoolProps
+{
+    [Range(1, 100)]
+    public int nbrPopulate;
+
+    public GameObject prefab;
 }
 
 public class Pool

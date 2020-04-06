@@ -54,7 +54,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -108,7 +107,7 @@ Transform:
   m_Children:
   - {fileID: 2672909135064769126}
   m_Father: {fileID: 2672909135726546351}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2672909135643723876
 GameObject:
@@ -187,7 +186,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2672909135643723878}
-  - {fileID: 8231860680281174733}
   - {fileID: 2672909135213841381}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -204,22 +202,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0306fe7930d83134f924d9ed796656cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entityData: {fileID: 11400000, guid: 880e4793d36bcc44c873780d659abda6, type: 2}
   alignment: 2
   startLife: 1
   m_CurrentLife: 1
   popAmount: 1
+  isAttackEntity: 1
+  typeTarget: 0
   attackContainer: {fileID: 2672909135643723876}
   damageAttack: 1
   rangeDetect: 2
+  isProjectileAttack: 1
+  prefabProjectile: {fileID: 0}
   timeWaitNextAttack: 1
-  targetTime: 0
-  monsterToInstantiate: {fileID: 0}
-  globalSpawnTarget: {fileID: 0}
-  rangeDetector: {fileID: 7436848649760046771}
-  moveSpeed: 1
-  globalTarget: {fileID: 6749672088759616213, guid: 287ab4823f6dcb546afd7994cca7bcc7,
+  isCreatorEntity: 1
+  toCreate: {fileID: 6749672088759616213, guid: 7b00344df04bc7841a45076f9533bad9,
     type: 3}
+  nbrToCreate: 1
+  timeWaitNextCreate: 1
+  moveSpeed: 1
+  globalTarget: {fileID: 0}
   timeWaitBeforeMove: 1
+  rangeToDoAttack: 1
 --- !u!54 &2672909135726546349
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -272,48 +276,3 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!1 &7436848649760046771
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8231860680281174733}
-  - component: {fileID: 7506822039930458767}
-  m_Layer: 8
-  m_Name: RangeDetector
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8231860680281174733
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7436848649760046771}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2672909135726546351}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &7506822039930458767
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7436848649760046771}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 4
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}

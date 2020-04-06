@@ -1,69 +1,86 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EntityManager : MonoBehaviour
+public class EntityManager : SingletonMono<EntityManager>
 {
-    public GameObject prefabToInstantiate;
+    public EntityData entityData;
+    // Ref vers la global target des entités Player
+    public GameObject towerIA;
+    // Ref vers la global target des entités IA
+    public GameObject towerPlayer;
 
-    public GameObject prefabEnemy;
-    
-    public GameObject globalTarget;
+    public GameObject outpostIA;
 
-    private Camera m_CurrentCamera;
+    public GameObject outpostIATwo;
 
-    private void Awake()
+    private MapManager m_MapManager;
+
+    public Action<Alignment> OnTowerDestroy;
+
+    public void PopElementFromData(EntityData entityData, Vector3 position)
     {
-        m_CurrentCamera = FindObjectOfType<Camera>();
+        GameObject newInstantiate = PoolManager.Instance.GetElement(entityData);
+        if (newInstantiate != null)
+        {
+            SetPopElement(newInstantiate, position);
+        }
+        else
+        {
+            Debug.LogError("NO POOLED DATA PREFAB : " + entityData.name);
+        }
     }
 
-    private void Update()
+    public void PopElementFromPrefab(GameObject prefabToPop, Vector3 position)
     {
-        InstantiateEnemy();
+        
+        GameObject newInstantiate = PoolManager.Instance.GetElement(prefabToPop);
+        if (newInstantiate != null)
+        {
+            SetPopElement(newInstantiate, position);
+        }
+        else
+        {
+            Debug.LogError("NO POOLED PREFAB : " + prefabToPop.name);
+        }
     }
 
-    private void InstantiateEnemy()
+
+    // Fonction centrale.
+    // Toute instantiation d'entité doit passer par cette fonction.
+    // Elle centralise l'initialisation de l'entité.
+    private void SetPopElement(GameObject newInstantiate, Vector3 position)
     {
-        // Creation d'un Ray à partir de la camera
-        Ray ray = m_CurrentCamera.ScreenPointToRay(Input.mousePosition);
-        float mult = 1000;
-        Debug.DrawRay(ray.origin, ray.direction * mult, Color.green);
-
-        // Recuperation du bouton droit de la souris.
-        if (Input.GetMouseButtonDown(0))
+        newInstantiate.transform.position = position;
+        newInstantiate.SetActive(true);
+        Entity entity = newInstantiate.GetComponent<Entity>();
+        if (entity is EntityMoveable moveable)
         {
-            // 
-            if (Physics.Raycast(ray, out RaycastHit hit, mult, LayerMask.GetMask("Default")))
+            if (moveable.entityData.alignment == Alignment.IA)
             {
-                // On recupère un élement depuis le poolmanager
-                GameObject instantiated = PoolManager.Instance.GetElement(prefabToInstantiate);
-                instantiated.transform.position = hit.point;
-                instantiated.SetActive(true);
-
-                Entity entity = instantiated.GetComponent<Entity>();
-                if (entity)
-                {
-                    if (entity is EntityMoveable moveable)
-                    {
-                        moveable.SetGlobalTarget(globalTarget);
-                    }
-                    entity.RestartEntity();
-                }
-
+                moveable.SetGlobalTarget(towerPlayer);
             }
+            else if (moveable.entityData.alignment == Alignment.Player)
+            {
+                moveable.SetGlobalTarget(towerIA);
+            }
+            entity.RestartEntity();
         }
+    }
 
-        // Recuperation 
-        if (Input.GetMouseButtonDown(1))
+    public void PoolElement(GameObject toPool)
+    {
+        if (towerPlayer == toPool)
         {
-            // 
-            if (Physics.Raycast(ray, out RaycastHit hit, mult, LayerMask.GetMask("Default")))
-            {
-                // On recupère un élement depuis le poolmanager
-                GameObject instantiated = PoolManager.Instance.GetElement(prefabEnemy);
-                instantiated.transform.position = hit.point;
-                instantiated.SetActive(true);
-            }
+            OnTowerDestroy?.Invoke(Alignment.Player);
         }
+        else if (towerIA == toPool)
+        {
+            OnTowerDestroy?.Invoke(Alignment.IA);
+        }
+        
+
+        PoolManager.Instance.PoolElement(toPool);
     }
 }

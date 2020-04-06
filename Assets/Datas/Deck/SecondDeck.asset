@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57bafd81ddb9fb143ae8de9c2dcaa512, type: 3}
+  m_Name: SecondDeck
+  m_EditorClassIdentifier: 
+  allEntities:
+  - {fileID: 11400000, guid: 5b591a4f745eb4e458e0f1c46dfebfb0, type: 2}
+  - {fileID: 11400000, guid: 34e8a3381b2dbea47b6a4a848beee04c, type: 2}
+  - {fileID: 11400000, guid: a0e51c151931fda419a03cafc082b743, type: 2}
